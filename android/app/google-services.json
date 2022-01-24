@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "17707041055",
+    "project_id": "myshare-547c6",
+    "storage_bucket": "myshare-547c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17707041055:android:ed2ebd718020445be6b02a",
+        "android_client_info": {
+          "package_name": "com.redgumsol.myshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17707041055-qplk05kh2s1lqc4kh5jd80o20ajtv1ch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNa9qF797tyRt703QdCveoftzgDbN55Rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17707041055-qplk05kh2s1lqc4kh5jd80o20ajtv1ch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
