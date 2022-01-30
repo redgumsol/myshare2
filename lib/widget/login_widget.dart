@@ -14,8 +14,11 @@ class LoginWidget extends StatefulWidget {
 class _LoginWidgetState extends State<LoginWidget> {
 
   final formKey = GlobalKey<FormState>();
-  final emailController    = TextEditingController();
-  final passwordController = TextEditingController();
+  // TODO Remove placeholder values from authentication text boxes
+  final emailController    = TextEditingController(text: 'aa@gmail.com');
+  final passwordController = TextEditingController(text: 'abcd1234');
+  // final emailController    = TextEditingController();
+  // final passwordController = TextEditingController();
   String authMessage = "";
 
   @override
@@ -105,23 +108,9 @@ class _LoginWidgetState extends State<LoginWidget> {
       print(e);
       print(e.message);
 
-      // setState(() {
-      //   authMessage = e.message!;
-      // });
-
       setState(() {
         authMessage = "Sorry, the provided Email and Password combination were not accepted";
       });
-
-      // TODO: Fix Utils.showSnackBar(e.message), if required, to replace setState above
-      // Utils.showSnackBar(e.message);
-      // Refer https://www.youtube.com/watch?v=OF3lwqcUwPY
-      // Failing with
-      //   Unhandled Exception: Null check operator used on a null value
-      //   E/flutter (11409): #0      Utils.showSnackBar (package:myshare/utils/utils.dart:11:30)
-      //   E/flutter (11409): #1      _LoginWidgetState.signIn (package:myshare/widget/login_widget.dart:99:13)
-      //   E/flutter (11409): <asynchronous suspension>
-
     }
 
     // Navigator.of(context) not working!

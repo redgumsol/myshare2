@@ -1,20 +1,29 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:myshare/model/fbuser.dart';
 
 class AdminHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser!;
+
+  User? user = FirebaseAuth.instance.currentUser!;
+
+
+    print (user.uid);
+
+
+    // Create user object from Firebase user
+    FBUser? _userFromFirebaseUser (User user) {
+      user != null ? FBUser(userUid: user.uid) : null;
+    }
+
+    print('------------');
+    print (_userFromFirebaseUser.toString().);
+    print('------------');
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Admin Home'),
-        // actions: [
-        //   IconButton(
-        //     icon: Icon(Icons.add),
-        //     onPressed: () {},
-        //   ),
-        // ],
       ),
       body: Padding(
         padding: EdgeInsets.all(32),
@@ -47,6 +56,11 @@ class AdminHomePage extends StatelessWidget {
               "(uid: " + user.uid + ")",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.blue[300]),
             ),
+            SizedBox(height: 8),
+            Text(
+              "(uid: " + _userFromFirebaseUser.toString() + ")",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.green[300]),
+            ),
             SizedBox(height: 40),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
@@ -75,7 +89,5 @@ class AdminHomePage extends StatelessWidget {
         ),
       ),
     );
-
-    // Stream<List<User>> readUsers
   }
 }
